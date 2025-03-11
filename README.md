@@ -1,6 +1,9 @@
 # downloaders
 Граберы сайтов.
 
+## downloader_advantech_com.py
+Грабер [www.advantech.com/](https://www.advantech.com/)
+
 ## downloader_seagullscientific_com.py
 Грабер [seagullscientific.com](https://www.seagullscientific.com)
 
