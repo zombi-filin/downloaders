@@ -2,7 +2,7 @@ import re
 import urllib.request
 import json
 
-alphabet_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+search_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 file_id_regex = r'\/downloadsr\.aspx\?File_Id=(.*)\"\starget'
 
 def get_html(url, aspx = False):
@@ -21,45 +21,65 @@ def get_html(url, aspx = False):
     elif aspx:
         return response.url
     else:
-        
         return response.read().decode('utf-8')
 
-opened_id = []
-download_list = []
+opened_ids = []
+download_links = []
+download_links_count = 0
 
-f = open('advantech.com.txt', 'w')
-for suf in alphabet_list:
+# Проходимся по списку поиска
+for suf in search_list:
+    # Делаем запрос на список ID страниц
     id_list_src = get_html(f'https://apis-corp.advantech.com/api/v1/search/documents/support?q={suf}&lang=en&use_fuzzy=false&data_types=Driver&page_index=1&page_size=1000')
+    # Парсим в JSON результат ответа
     id_list_json = json.loads(id_list_src)
-    all_count = int(id_list_json['count'])
-
-    if all_count > 1000:
+    # Берем количество ID из результата запроса
+    pages_all_count = int(id_list_json['count'])
+    # Если количество более 1000 отладка
+    if pages_all_count > 1000:
         breakpoint()
-
-    count = 0    
-
+    # Счетчик обработанных страниц
+    pages_count = 0    
+    # Проходим по списку ID страниц
     for line_json in id_list_json['documents']:
-        count += 1
+        # Увеличиваем счетчик обработанных страниц
+        pages_count += 1
+        # Берем ID страницы
         page_id = line_json['id']
-
-        print(f'{suf} > {count}/{all_count} > {page_id}')
-        
-        if page_id in opened_id:
+        # Лог
+        print(f'{suf} > {pages_count}/{pages_all_count} > {page_id}')
+        # Проверяем обрабатывали уже страницу
+        if page_id in opened_ids:
             continue
-        opened_id.append(page_id)
-
+        opened_ids.append(page_id)
+        # Запрашиваем HTLM страницы по ID
         page_src = get_html(f'https://www.advantech.com/en/support/details/driver?id={page_id}')
+        # Парсим с разбивкой по строкам
         page_scr_list = page_src.split('\n')
-
+        # Проходим построчно
         for page_src_line in page_scr_list:
+            # Ищем ID закачки
             file_id_finds = re.findall(file_id_regex, page_src_line)
+            # Если нашли в строе более 1 отладка
             if len(file_id_finds) > 1:
                 breakpoint()
-            elif len(file_id_finds) > 0:    
-                
+            # Если корректно нашли ID закачки
+            elif len(file_id_finds) == 1:
+                # Запрашиваем URL загрузки через ID загрузки
                 download_url = get_html(f'https://downloadt.advantech.com/download/downloadsr.aspx?File_Id={file_id_finds[0]}', aspx = True)
-                if download_url not in download_list:
-                    print(f'download_url > {download_url}')
-                    download_list.append(download_url)
-                    f.write(f'{download_url}\n')
+                # Если нет в списке найденых
+                if download_url not in download_links:
+                    # Увеличиваем счетчик найденых URL
+                    download_links_count += 1
+                    # Лог
+                    print(f'download_url #{download_links_count} > {download_url}')
+                    # Добавляем в список найденых
+                    download_links.append(download_url)                    
+# Сохраняем результат
+print('> SAVE TO FILE')
+f = open('advantech.com.txt', 'w')
+for line in download_links:
+    f.write(f'{line}\n')
 f.close()
+# Конец скрипта
+print('> DONE')
