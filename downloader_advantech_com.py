@@ -55,9 +55,21 @@ for suf in search_list:
         # Запрашиваем HTLM страницы по ID
         page_src = get_html(f'https://www.advantech.com/en/support/details/driver?id={page_id}')
         # Парсим с разбивкой по строкам
-        page_scr_list = page_src.split('\n')
+        page_scr_list = page_src.split('\r\n')
+        # Флаг блока закачки
+        is_downloadContent = False
         # Проходим построчно
         for page_src_line in page_scr_list:
+            # Определяем начало блока закачки
+            if page_src_line == '            <!---Start of downloadContent-->':
+                is_downloadContent = True
+                continue
+            # Определяем конец блока закачки
+            if page_src_line == '            <!--End of downloadContent -->':
+                break
+            # Если не в блоке не обрабатываем
+            if not is_downloadContent:
+                continue
             # Ищем ID закачки
             file_id_finds = re.findall(file_id_regex, page_src_line)
             # Если нашли в строе более 1 отладка
