@@ -77,6 +77,10 @@ for page_id in page_ids_list:
     
     # Запрашиваем HTLM страницы по ID
     page_src = get_html(f'https://www.advantech.com/en/support/details/driver?id={page_id}')
+    
+    if page_src is None:
+        continue
+    
     # Парсим с разбивкой по строкам
     page_scr_list = page_src.split('\r\n')
     # Флаг блока закачки
