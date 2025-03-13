@@ -80,7 +80,7 @@ for page_id in page_ids_list:
     
     if page_src is None:
         continue
-    
+
     # Парсим с разбивкой по строкам
     page_scr_list = page_src.split('\r\n')
     # Флаг блока закачки
@@ -123,6 +123,8 @@ for file_id in file_ids_list:
         continue
 
     download_url = get_html(f'https://downloadt.advantech.com/download/downloadsr.aspx?File_Id={file_id}', aspx = True)
+    if download_url is None:
+        continue
     with open(file_id_file, 'w') as f:
         f.write(download_url)
 # 
