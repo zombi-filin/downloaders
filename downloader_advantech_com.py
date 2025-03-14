@@ -18,7 +18,7 @@ def get_html(url, aspx = False):
             return None
         else:
             return get_html(url) 
-    if response.code == 404:
+    if response.code != 200:
         return None
     elif aspx:
         return response.url
