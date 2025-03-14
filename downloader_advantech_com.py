@@ -128,5 +128,21 @@ for file_id in file_ids_list:
     with open(file_id_file, 'w') as f:
         f.write(download_url)
 # 
+# Формирования списка загрузки
+dowload_list = []
+for file_id in file_ids_list:
+    file_id_file = os.path.join(file_ids_dir, file_id)
+    
+    if os.path.getsize(file_id_file) == 0:
+        continue
+    with open(file_id_file, 'r') as f:
+        url = f.read()
+        if url not in dowload_list:
+            dowload_list.append(url)
+
+with open('advantech.com.txt', 'w') as f:
+    for line in dowload_list:
+        f.write(f'{line}\n')
+# 
 # Конец скрипта
 print('\n> DONE')
