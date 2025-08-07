@@ -2,7 +2,10 @@
 Граберы сайтов.
 
 ## downloader_advantech_com.py
-Грабер [www.advantech.com/](https://www.advantech.com/)
+Грабер [www.advantech.com](https://www.advantech.com/)
+
+## downloader_en_colorful_cn.py
+Грабер [en.colorful.cn](https://en.colorful.cn/en/)
 
 ## downloader_seagullscientific_com.py
 Грабер [seagullscientific.com](https://www.seagullscientific.com)
