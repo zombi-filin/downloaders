@@ -7,6 +7,9 @@
 ## downloader_en_colorful_cn.py
 Грабер [en.colorful.cn](https://en.colorful.cn/en/)
 
+## downloader_gsmusbdriver_com.py
+Грабер [gsmusbdriver.com](https://gsmusbdriver.com/)
+
 ## downloader_seagullscientific_com.py
 Грабер [seagullscientific.com](https://www.seagullscientific.com)
 
