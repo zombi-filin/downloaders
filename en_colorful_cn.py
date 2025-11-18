@@ -40,7 +40,7 @@ for product_class_item in product_class_list_json:
             if fileurl not in download_list:
                 download_list.append(fileurl)
 
-with open('en.colorful.cn.txt', 'w') as f:
+with open('en_colorful_cn.txt', 'w') as f:
     for line in download_list:
         f.write(f'{line}\n')
 

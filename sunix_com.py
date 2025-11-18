@@ -47,7 +47,7 @@ while product_id < 3000:
         pass
     product_id += 1
 
-with open('sunix.com.txt', 'w') as f:
+with open('sunix_com.txt', 'w') as f:
     for line in dowload_list:
         f.write(f'{line}\n')
 

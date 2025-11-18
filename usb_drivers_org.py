@@ -21,7 +21,7 @@ def get_html(url):
 # main
 #--------------------------------------------------------------
 
-f = open('usb-drivers.org.txt', 'w')
+f = open('usb_drivers_org.txt', 'w')
 # Список линков
 links_list = []
 # Список расширений

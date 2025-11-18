@@ -140,7 +140,7 @@ for device_name in device_list:
             print(link)
             dowload_urls.append(link)
 # 
-with open('gsmusbdriver.com.txt', 'w') as f:
+with open('gsmusbdriver_com.txt', 'w') as f:
     for line in dowload_urls:
         f.write(f'{line}\n')
 

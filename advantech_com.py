@@ -140,7 +140,7 @@ for file_id in file_ids_list:
         if url not in dowload_list:
             dowload_list.append(url)
 
-with open('advantech.com.txt', 'w') as f:
+with open('advantech_com.txt', 'w') as f:
     for line in dowload_list:
         f.write(f'{line}\n')
 # 

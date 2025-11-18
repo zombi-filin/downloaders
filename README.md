@@ -1,20 +1,20 @@
 # downloaders
 Граберы сайтов.
 
-## downloader_advantech_com.py
+## advantech_com.py
 Грабер [www.advantech.com](https://www.advantech.com/)
 
-## downloader_en_colorful_cn.py
+## en_colorful_cn.py
 Грабер [en.colorful.cn](https://en.colorful.cn/en/)
 
-## downloader_gsmusbdriver_com.py
+## gsmusbdriver_com.py
 Грабер [gsmusbdriver.com](https://gsmusbdriver.com/)
 
-## downloader_seagullscientific_com.py
+## seagullscientific_com.py
 Грабер [seagullscientific.com](https://www.seagullscientific.com)
 
-## downloader_sunix_com.py
+## sunix_com.py
 Грабер [sunix.com](https://www.sunix.com)
 
-## downloader_usb_drivers_org.py
+## usb_drivers_org.py
 Грабер [usb-drivers.org](https://www.usb-drivers.org/)

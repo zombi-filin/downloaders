@@ -9,7 +9,7 @@ html = response.read().decode('utf-8')
 
 regx = r'href="https://www.seagullscientific.com/support/downloads/drivers/([^\"]+)'
 pages = re.findall(regx, html)
-f = open("seagullscientific.com.txt", "w")
+f = open("seagullscientific_com.txt", "w")
 for i in range(len(pages)):
     url = 'https://www.seagullscientific.com/support/downloads/drivers/' + \
         pages[i] + '/download/'
