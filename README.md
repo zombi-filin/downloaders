@@ -4,6 +4,9 @@
 ## advantech_com.py
 Грабер [www.advantech.com](https://www.advantech.com/)
 
+## download_ninkear_com.py
+Грабер [download.ninkear.com](https://download.ninkear.com/)
+
 ## en_colorful_cn.py
 Грабер [en.colorful.cn](https://en.colorful.cn/en/)
 
