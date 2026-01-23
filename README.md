@@ -19,5 +19,8 @@
 ## sunix_com.py
 Грабер [sunix.com](https://www.sunix.com)
 
+## support_getac_com.py
+Грабер [support.getac.com](https://support.getac.com)
+
 ## usb_drivers_org.py
 Грабер [usb-drivers.org](https://www.usb-drivers.org/)
