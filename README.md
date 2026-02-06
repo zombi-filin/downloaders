@@ -7,6 +7,9 @@
 ## download_ninkear_com.py
 Грабер [download.ninkear.com](https://download.ninkear.com/)
 
+## drivers_icl_techno_ru.py
+Грабер [drivers.icl-techno.ru](https://drivers.icl-techno.ru/)
+
 ## en_colorful_cn.py
 Грабер [en.colorful.cn](https://en.colorful.cn/en/)
 
