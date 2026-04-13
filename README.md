@@ -22,6 +22,9 @@
 ## sunix_com.py
 Грабер [sunix.com](https://www.sunix.com)
 
+## sunwind_ru_com.py
+Грабер [sunwind.ru.com](https://sunwind.ru.com)
+
 ## support_getac_com.py
 Грабер [support.getac.com](https://support.getac.com)
 
