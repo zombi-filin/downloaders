@@ -4,6 +4,11 @@
 ## advantech_com.py
 Грабер [www.advantech.com](https://www.advantech.com/)
 
+## ddixlab_com_public.py
+Грабер
+[ddixlab.com/public/digma](https://www.ddixlab.com/public/digma/)
+[ddixlab.com/public/sunwind](https://www.ddixlab.com/public/sunwind/)
+
 ## dl_digma_ru.py
 Грабер [dl.digma.ru](https://dl.digma.ru/)
 
