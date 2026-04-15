@@ -12,6 +12,9 @@
 ## dl_digma_ru.py
 Грабер [dl.digma.ru](https://dl.digma.ru/)
 
+## dl_sunwind_ru_com.py
+Грабер [dl.sunwind.ru.com](https://dl.sunwind.ru.com/)
+
 ## download_ninkear_com.py
 Грабер [download.ninkear.com](https://download.ninkear.com/)
 
