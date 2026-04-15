@@ -24,8 +24,3 @@ with open('dl_digma_ru.txt', 'w') as f:
         f.write(f'{line}\n')
 
 print('DONE')
-
-'''
-https://dl.digma.ru/03415
-https://dl.digma.ru/03417
-'''
